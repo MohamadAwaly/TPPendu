@@ -8,7 +8,10 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import jdk.nashorn.internal.scripts.JO;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
@@ -34,8 +37,8 @@ public abstract class FenPrincipal extends JFrame {
 		contenaire.setBackground(Color.red);
 		contenaire.setLayout(new BorderLayout());
 		contenaire.add(pageDacceuil, BorderLayout.CENTER);
-		//contenaire.add(label, BorderLayout.NORTH);
-		//pageDacceuil.add(label);
+		// contenaire.add(label, BorderLayout.NORTH);
+		// pageDacceuil.add(label);
 
 		this.setJMenuBar(menu.menu);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -44,6 +47,7 @@ public abstract class FenPrincipal extends JFrame {
 		// this.menu.nouveau.addActionListener(new NouveauListener());
 		menu.nouveau.addActionListener(new NouveauListener1());
 		menu.regles.addActionListener(new RegleListener());
+		menu.apropo.addActionListener(new ApropoListener());
 		// Quitter l application
 		menu.quitter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -51,29 +55,41 @@ public abstract class FenPrincipal extends JFrame {
 			}
 		});
 	}
+
 	public void ChangePan() {
-		//contenaire.add(aPropo, BorderLayout.CENTER);
-		if (bouton == "nouveauJeu"){
+		// contenaire.add(aPropo, BorderLayout.CENTER);
+		if (bouton == "nouveauJeu") {
 			this.setContentPane(jeu);
 			this.revalidate();
 		}
-		if (bouton == "RegleDuJeu"){
+		if (bouton == "RegleDuJeu") {
 			this.setContentPane(regles);
 			this.revalidate();
 		}
-		
+
 	}
+
 	class NouveauListener1 implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			bouton = "nouveauJeu";
 			FenPrincipal.this.ChangePan();
 		}
 	}
+
 	class RegleListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			bouton = "RegleDuJeu";
 			FenPrincipal.this.ChangePan();
 		}
-		
+	}
+
+	class ApropoListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			JOptionPane jop = new JOptionPane();
+			jop.showMessageDialog(null, "Createur: AWALY Mohamad \n "
+					+ "License: Freeware\n"
+					+ "Copyright: awaly.mohamad@gmail.com\n",
+					bouton, JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 }

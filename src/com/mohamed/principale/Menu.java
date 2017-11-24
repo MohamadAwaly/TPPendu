@@ -5,6 +5,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JToolBar;
 
+import sun.security.krb5.internal.APOptions;
+
 public class Menu {
 	
 	public JMenuBar menu = new JMenuBar();
@@ -15,9 +17,10 @@ public class Menu {
 	
 	// sous menue Fichier
 	public JMenuItem nouveau = new JMenuItem("Nouveau");
-	private JMenuItem scores = new JMenuItem("Scores");
+	public JMenuItem scores = new JMenuItem("Scores");
 	public JMenuItem regles = new JMenuItem("Regles");
 	public JMenuItem quitter = new JMenuItem("Quitter");
+	public JMenuItem apropo = new JMenuItem("?");
 	
 	// Constructeur
 	public Menu() {
@@ -32,6 +35,7 @@ public class Menu {
 		fichier.add(scores);
 		aPropos.add(regles);
 		fichier.add(quitter);
+		aPropos.add(apropo);
 		
 	}
 }
