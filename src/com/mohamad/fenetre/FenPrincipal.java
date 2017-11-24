@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
 
-import com.mohamad.principale.Menu;
+import com.mohamed.principale.Menu;
 import com.sun.corba.se.spi.orbutil.fsm.Action;
 
 public abstract class FenPrincipal extends JFrame {
@@ -21,6 +21,7 @@ public abstract class FenPrincipal extends JFrame {
 	private JPanel contenaire = new JPanel();
 	Accueil pageDacceuil = new Accueil();
 	Regles regles = new Regles();
+	Jeu jeu = new Jeu();
 	String bouton = "";
 
 	public FenPrincipal() {
@@ -52,10 +53,9 @@ public abstract class FenPrincipal extends JFrame {
 	}
 	public void ChangePan() {
 		//contenaire.add(aPropo, BorderLayout.CENTER);
-		this.setContentPane(regles);
+		this.setContentPane(jeu);
 		this.revalidate();
 	}
-
 	class NouveauListener1 implements ActionListener {
 		public void actionPerformed(ActionEvent arg0) {
 			bouton = "nouveauJeu";

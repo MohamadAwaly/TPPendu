@@ -9,8 +9,6 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		FenPrincipal fen = new FenPrincipal() {};
-		//Fenetre fen = new Fenetre();
-			
 	}
 
 }
