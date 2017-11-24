@@ -85,8 +85,7 @@ public abstract class FenPrincipal extends JFrame {
 
 	class ApropoListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			JOptionPane jop = new JOptionPane();
-			jop.showMessageDialog(null, "Createur: AWALY Mohamad \n "
+			JOptionPane.showMessageDialog(null, "Createur: AWALY Mohamad \n "
 					+ "License: Freeware\n"
 					+ "Copyright: awaly.mohamad@gmail.com\n",
 					bouton, JOptionPane.INFORMATION_MESSAGE);
