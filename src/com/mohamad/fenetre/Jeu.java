@@ -93,9 +93,7 @@ public class Jeu extends JPanel {
 	
 	class Desablebouton implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			e.getSource();
-				
-			
+			e.getSource();	
 		}
 	}
 

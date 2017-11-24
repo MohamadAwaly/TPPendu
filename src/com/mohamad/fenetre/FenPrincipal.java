@@ -53,17 +53,24 @@ public abstract class FenPrincipal extends JFrame {
 	}
 	public void ChangePan() {
 		//contenaire.add(aPropo, BorderLayout.CENTER);
-		this.setContentPane(jeu);
-		this.revalidate();
+		if (bouton == "nouveauJeu"){
+			this.setContentPane(jeu);
+			this.revalidate();
+		}
+		if (bouton == "RegleDuJeu"){
+			this.setContentPane(regles);
+			this.revalidate();
+		}
+		
 	}
 	class NouveauListener1 implements ActionListener {
-		public void actionPerformed(ActionEvent arg0) {
+		public void actionPerformed(ActionEvent e) {
 			bouton = "nouveauJeu";
 			FenPrincipal.this.ChangePan();
 		}
 	}
 	class RegleListener implements ActionListener {
-		public void actionPerformed(ActionEvent arg0) {
+		public void actionPerformed(ActionEvent e) {
 			bouton = "RegleDuJeu";
 			FenPrincipal.this.ChangePan();
 		}
